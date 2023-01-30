@@ -6,10 +6,7 @@ import Navbar from '../Components/Navbar';
 
 export default function Main() {
   return (
-    <div style={{
-      backgroundColor: '#EEF2FE',
-    }}
-    >
+    <div>
       <Navbar />
       <Outlet />
       <Footer />
