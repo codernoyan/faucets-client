@@ -5,9 +5,10 @@ import React from 'react';
 
 const StyleFooter = styled(Box)`
   text-align: center;
-  padding: 8px 0;
-  height: 16px;
+  padding: 25px 0;
+  height: 20px;
   background-color: #ffffff;
+  margin-bottom: 1rem;
 `;
 
 export default function Footer() {

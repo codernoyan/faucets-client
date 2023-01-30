@@ -22,7 +22,10 @@ const NoticeBoard = styled(Box)`
 
 export default function Home() {
   return (
-    <div>
+    <div style={{
+      height: '100vh',
+    }}
+    >
       {/* Notice board */}
       <NoticeBoard>
         <p>Notice here</p>

@@ -12,25 +12,28 @@ const Warning = styled(Box)`
   padding: 10px;
 `;
 
+const WalletWrapper = styled(Box)`
+  background-color: white;
+  padding: 25px 20px 25px 20px;
+`;
+
 export default function WalletInfo() {
   return (
     <Container
       maxWidth="xl"
-      sx={{
-        backgroundColor: 'white',
-        padding: '1rem',
-      }}
     >
-      <Warning>
-        <WarningIcon sx={{
-          color: '#9B1FE9',
-        }}
-        />
-        <p>
-          Your wallet is connected to Ethereum Kovan,
-          so you are requesting Ethereum Kovan Link/ETH.
-        </p>
-      </Warning>
+      <WalletWrapper>
+        <Warning>
+          <WarningIcon sx={{
+            color: '#9B1FE9',
+          }}
+          />
+          <p>
+            Your wallet is connected to Ethereum Kovan,
+            so you are requesting Ethereum Kovan Link/ETH.
+          </p>
+        </Warning>
+      </WalletWrapper>
     </Container>
   );
 }
