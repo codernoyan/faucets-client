@@ -1,15 +1,18 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { RouterProvider } from 'react-router-dom';
 import './App.css';
 import router from './Routes/Routes/Routes';
+import theme from './Theme/Theme';
 
 function App() {
   return (
-    <div>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <CssBaseline />
+        <RouterProvider router={router} />
+      </div>
+    </ThemeProvider>
   );
 }
 
