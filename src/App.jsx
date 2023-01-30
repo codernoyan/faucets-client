@@ -6,7 +6,7 @@ import router from './Routes/Routes/Routes';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <CssBaseline />
       <RouterProvider router={router} />
     </div>

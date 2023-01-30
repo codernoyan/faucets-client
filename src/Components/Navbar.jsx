@@ -14,13 +14,23 @@ export default function Navbar() {
     <div>
       <Container maxWidth="xl">
         <FlexBox justifyContent="space-between">
-          <h2>Faucets</h2>
-          <Stack direction="row" spacing={4}>
-            <Button variant="outlined">Etherium Kovan</Button>
-            <Button variant="outlined">
-              <AccountBalanceWalletIcon />
-              Connect Wallet
+          <h2 style={{
+            color: '#9B1FE9'
+          }}
+          >
+            Faucets
 
+          </h2>
+          <Stack direction="row" spacing={2}>
+            <Button variant="outlined">Etherium Kovan</Button>
+            <Button
+              variant="outlined"
+              startIcon={<AccountBalanceWalletIcon />}
+              sx={{
+                color: '#9B1FE9'
+              }}
+            >
+              Connect Wallet
             </Button>
             <IconButton>
               <AccountCircleOutlinedIcon />
