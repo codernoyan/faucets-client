@@ -70,7 +70,6 @@ export default function WalletInfo() {
     setVerified(true);
   }
 
-  console.log(verified);
   return (
     <Container
       maxWidth="xl"
@@ -131,10 +130,12 @@ export default function WalletInfo() {
         <Box>
           <table>
             <thead>
-              <td>Sr</td>
-              <td>Time</td>
-              <td>Amount</td>
-              <td>Hash</td>
+              <tr>
+                <th>Sr</th>
+                <th>Time</th>
+                <th>Amount</th>
+                <th>Hash</th>
+              </tr>
             </thead>
             <tbody>
               <tr>
