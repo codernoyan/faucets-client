@@ -34,7 +34,8 @@ export default function Navbar() {
               variant="outlined"
               startIcon={<AccountBalanceWalletIcon />}
               sx={{
-                color: '#9B1FE9'
+                color: '#9B1FE9',
+                borderColor: '#9B1FE9'
               }}
             >
               Connect Wallet

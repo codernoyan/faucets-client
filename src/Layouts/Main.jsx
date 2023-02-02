@@ -8,7 +8,13 @@ export default function Main() {
   return (
     <div>
       <Navbar />
-      <Outlet />
+      <div style={{
+        backgroundColor: '#EEF2FE',
+        paddingBottom: '2rem',
+      }}
+      >
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
