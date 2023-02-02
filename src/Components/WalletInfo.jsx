@@ -1,11 +1,15 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable react/jsx-no-bind */
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable comma-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import WarningIcon from '@mui/icons-material/Warning';
 import {
   Box, Container, styled
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { NavLink } from 'react-router-dom';
 
 const Warning = styled(Box)`
@@ -35,6 +39,7 @@ const MultipleInput = styled('div')`
   width: 50%;
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 `;
 
 const SubmitButton = styled('button')`
@@ -58,6 +63,14 @@ const StyledLink = styled(NavLink)`
 `;
 
 export default function WalletInfo() {
+  const [verified, setVerified] = useState(false);
+  // recaptcha
+  function captchaChange(value) {
+    console.log('Captcha value:', value);
+    setVerified(true);
+  }
+
+  console.log(verified);
   return (
     <Container
       maxWidth="xl"
@@ -92,7 +105,12 @@ export default function WalletInfo() {
             <WalletInput type="text" id="w-address" placeholder="20 Test Link" disabled />
             <WalletInput type="text" id="w-address" placeholder="0.5 ETH" disabled />
           </MultipleInput>
-          <SubmitButton>Send Request</SubmitButton>
+          {/* recaptcha */}
+          <ReCAPTCHA
+            sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+            onChange={captchaChange}
+          />
+          <SubmitButton disabled={!verified}>Send Request</SubmitButton>
         </form>
         {/* request history */}
         <Box sx={{
@@ -113,10 +131,10 @@ export default function WalletInfo() {
         <Box>
           <table>
             <thead>
-              <th>Sr</th>
-              <th>Time</th>
-              <th>Amount</th>
-              <th>Hash</th>
+              <td>Sr</td>
+              <td>Time</td>
+              <td>Amount</td>
+              <td>Hash</td>
             </thead>
             <tbody>
               <tr>
