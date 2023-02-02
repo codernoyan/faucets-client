@@ -14,7 +14,12 @@ const HeroParagraph = styled.p`
 
 export default function Hero() {
   return (
-    <Container maxWidth="xl">
+    <Container
+      maxWidth="xl"
+      sx={{
+        padding: '48px',
+      }}
+    >
       <HeroHeader>Request testnet LINK</HeroHeader>
       <HeroParagraph>
         Get testnet LINK for an account on one of the supported blockchain

@@ -114,7 +114,7 @@ export default function WalletInfo() {
         </form>
         {/* request history */}
         <Box sx={{
-          marginTop: '2rem',
+          marginTop: '1.5rem',
         }}
         >
           <p>Request History</p>

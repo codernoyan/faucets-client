@@ -6,9 +6,9 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import {
   Box,
-  Button, Container, IconButton, Stack
+  Button, Container, IconButton, Menu, MenuItem, Stack
 } from '@mui/material';
-import React from 'react';
+import React, { useState } from 'react';
 import FlexBox from '../Styled/FlexBox';
 
 const StyledNavbar = styled(Box)`
@@ -17,6 +17,15 @@ const StyledNavbar = styled(Box)`
 `;
 
 export default function Navbar() {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
     <StyledNavbar>
       <Container maxWidth="xl">
@@ -40,9 +49,30 @@ export default function Navbar() {
             >
               Connect Wallet
             </Button>
-            <IconButton>
-              <AccountCircleOutlinedIcon />
-            </IconButton>
+            <div>
+              <IconButton
+                id="basic-button"
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+              >
+                <AccountCircleOutlinedIcon />
+              </IconButton>
+              <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                  'aria-labelledby': 'basic-button',
+                }}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+              </Menu>
+            </div>
           </Stack>
         </FlexBox>
       </Container>
